@@ -78,6 +78,13 @@ const buildHeaderButtons = (data) => {
 
 const populateHeader = () => {
   const header = document.querySelector(".dogs-list");
+  
+  header.innerHTML = '';
+  const li = document.createElement('li');
+  li.classList.add('dogs-list__button', 'dogs-list__button--add')
+  li.innerText = "+";
+  header.append(li)
+
   for (let i = 0; i < data.length; i++) {
     let newButton = buildHeaderButtons(data[i]);
     header.append(newButton);
